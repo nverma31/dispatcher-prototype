@@ -55,7 +55,7 @@ export function AddressLookupField({
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'X-Goog-Api-Key': 'AIzaSyBP0l1p4SS65c9tAz_4jGNcw1_jX15nNwE', // Note: API Key should ideally be in env vars
+              'X-Goog-Api-Key': import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
               'X-Goog-FieldMask': 'places.displayName,places.formattedAddress,places.location,places.id'
             },
             body: JSON.stringify({
@@ -116,7 +116,7 @@ export function AddressLookupField({
     // Geocode to get coordinates
     try {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(displayText)}&key=AIzaSyBP0l1p4SS65c9tAz_4jGNcw1_jX15nNwE`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(displayText)}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`
       );
 
       if (!response.ok) throw new Error('Geocoding error');
