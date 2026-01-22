@@ -224,19 +224,14 @@ export function BookingForm({
             </div>
           </div>
 
-          <button
+          <Button
+            variant="outline"
             onClick={onCreateRecurrentTrip}
-            className="bg-[var(--color-neutral-95)] box-border content-stretch flex flex-col gap-2 h-12 sm:h-14 items-center justify-center overflow-clip px-4 sm:px-6 py-3 sm:py-4 relative rounded-[var(--radius)] shrink-0 w-full sm:w-auto hover:opacity-80 transition-opacity"
+            className="h-12 sm:h-14 px-4 sm:px-6 w-full sm:w-auto"
           >
-            <div className="content-stretch flex gap-2 items-center justify-center overflow-clip relative shrink-0 w-full">
-              <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5" />
-              <div className="flex flex-col justify-center leading-[0] relative shrink-0 text-[var(--color-on-surface)]">
-                <p className="leading-[24px] whitespace-pre text-sm sm:text-base">
-                  Neue wiederkehrende Fahrt
-                </p>
-              </div>
-            </div>
-          </button>
+            <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            Neue wiederkehrende Fahrt
+          </Button>
         </div>
 
         {/* Passenger Details */}
